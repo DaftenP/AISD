@@ -46,8 +46,8 @@ class DataReader():
     def process_data(self, splt):
         data = []
 
-        data = splt[1:-1]
+        data = list(map(int, splt[1:-1]))
 
-        label = splt[-1:]
+        label = list(map(int, splt[-1:]))
 
         return data, label
