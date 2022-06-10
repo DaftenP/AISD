@@ -4,7 +4,6 @@ import random
 from matplotlib import pyplot as plt
 
 
-
 class DataReader():
     def __init__(self):
         self.train_X, self.train_Y, self.test_X, self.test_Y = self.read_data()
