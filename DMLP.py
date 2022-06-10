@@ -3,7 +3,7 @@ from tensorflow import keras
 import numpy as np
 
 
-class MLPC():
+class DMLP():
     def __init__(self):
         self.model = self.new_model()
 
@@ -11,12 +11,16 @@ class MLPC():
         model = keras.Sequential([
             keras.layers.Dense(3000),
             keras.layers.Dense(1024, activation="relu"),
-            keras.layers.Dense(1024, activation="relu"),
-            keras.layers.Dense(1024, activation="relu"),
-            keras.layers.Dense(1024, activation="relu"),
+            keras.layers.Dropout(rate=0.5),
             keras.layers.Dense(1024, activation="relu"),
             keras.layers.Dropout(rate=0.5),
-            keras.layers.Dense(2, activation='softmax')
+            keras.layers.Dense(1024, activation="relu"),
+            keras.layers.Dropout(rate=0.5),
+            keras.layers.Dense(1024, activation="relu"),
+            keras.layers.Dropout(rate=0.5),
+            keras.layers.Dense(1024, activation="relu"),
+            keras.layers.Dropout(rate=0.5),
+            keras.layers.Dense(2, activation='softmax'),
         ])
 
         model.compile(optimizer="adam", metrics=["accuracy"],

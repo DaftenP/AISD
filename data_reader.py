@@ -1,6 +1,7 @@
 import numpy as np
 import os
 import random
+from sklearn.preprocessing import *
 from matplotlib import pyplot as plt
 
 
@@ -39,6 +40,7 @@ class DataReader():
         train_Y = Y[:int(len(Y) * 0.8)]
         test_X = X[int(len(X) * 0.8):]
         test_Y = Y[int(len(Y) * 0.8):]
+
 
         return train_X, train_Y, test_X, test_Y
 
