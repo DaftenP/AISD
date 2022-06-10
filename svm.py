@@ -12,7 +12,7 @@ from sklearn import svm
 # print("정확도 : ", s.score(dr.test_X, dr.test_Y), "%")
 
 
-class SVM():
+class SVC():
     def __init__(self):
         self.model = self.new_model()
 
