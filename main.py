@@ -39,7 +39,7 @@ svm_model = svm.fit(dr.train_X, dr.train_Y.ravel())
 pre = svm_model.predict(dr.test_X)
 
 score = sklearn.metrics.accuracy_score(pre, dr.test_Y.ravel())
-report = sklearn.metrics.classification_report(pre, dr.test_Y.ravel(), target_names=[normal, spam])
+report = sklearn.metrics.classification_report(pre, dr.test_Y.ravel(), target_names=['normal', 'spam'])
 
 print("Accuracy : {0}" .format(score))
 print(report)

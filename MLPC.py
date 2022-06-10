@@ -11,11 +11,10 @@ class MLPC():
         model = keras.Sequential([
             keras.layers.Dense(3000),
             keras.layers.Dense(1024, activation="relu"),
-            keras.layers.BatchNormalization(),
             keras.layers.Dropout(rate=0.5),
             keras.layers.Dense(2, activation='softmax')
         ])
 
         model.compile(optimizer="adam", metrics=["accuracy"],
-                      loss="binary_crossentropy")
+                      loss="sparse_categorical_crossentropy")
         return model
