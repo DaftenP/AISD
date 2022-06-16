@@ -15,7 +15,7 @@ EPOCHS = 200
 # data reader Initialization
 dr = data_reader.DataReader()
 
-print("데이터 셋 형태 : \n feature : {0} \n label : {1} \n instence : {2}"
+print("데이터 셋 형태 : \n feature : {0} \n label : {1} \n instance : {2}"
       .format(dr.train_X.shape[1],
               len(set(dr.train_Y.ravel())),
               dr.train_X.shape[0] + dr.test_X.shape[0]))
@@ -51,7 +51,7 @@ plt.title('MLP Accuracy')
 plt.ylabel('accuracy')
 plt.ylim([0.5, 1.0])
 plt.xlabel('epoch')
-plt.legend(['train', 'test'])
+plt.legend(['train', 'validation'])
 plt.show()
 
 history_df = pd.DataFrame(dmlp_his.history)
@@ -61,7 +61,7 @@ plt.title('Deep MLP Accuracy')
 plt.ylabel('accuracy')
 plt.ylim([0.5, 1.0])
 plt.xlabel('epoch')
-plt.legend(['train', 'test'])
+plt.legend(['train', 'validation'])
 plt.show()
 
 # SVM Predict
