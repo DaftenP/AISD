@@ -5,6 +5,6 @@ class SVC():
         self.model = self.new_model()
 
     def new_model(self):
-        model = svm.SVC(gamma=0.001, kernel='rbf', C=10)
+        model = svm.SVC(gamma=0.001, kernel='linear', C=10, verbose=1)
 
         return model

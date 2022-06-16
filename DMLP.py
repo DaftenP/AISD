@@ -20,9 +20,9 @@ class DMLP():
             keras.layers.Dropout(rate=0.5),
             keras.layers.Dense(1024, activation="relu"),
             keras.layers.Dropout(rate=0.5),
-            keras.layers.Dense(2, activation='softmax'),
+            keras.layers.Dense(1, activation='sigmoid'),
         ])
 
         model.compile(optimizer="adam", metrics=["accuracy"],
-                      loss="sparse_categorical_crossentropy")
+                      loss="binary_crossentropy")
         return model
